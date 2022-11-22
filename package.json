@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "npx tailwindcss-cli build -i src/input.css -o public/output.css -w",
     "prepare": "husky install"
   },
   "repository": {
@@ -18,7 +19,7 @@
   },
   "homepage": "https://github.com/Sanhamm/SemesterOppgave2022#readme",
   "devDependencies": {
-    "eslint": "^8.27.0",
+    "eslint": "^8.28.0",
     "husky": "^8.0.2",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
