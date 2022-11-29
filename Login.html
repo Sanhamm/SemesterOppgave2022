@@ -9,7 +9,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Kavivanar&display=swap" rel="stylesheet"> 
         <script src="./src/header.js" defer></script>
-        <script src="./src/login.js"></script>
+        <script src="./src/login.js" defer></script>
         <title>BiD Homepage</title>
     </head>
     <body class="bg-background-col">
@@ -36,7 +36,7 @@
                 <div>
                     <img src="./media/BiD.png" alt="logo" class="mx-auto">
                     <h1 class="text-center mt-10 text-3xl" >Login</h1>
-                    <p id="bannerWrong" class="mx-auto"></p>
+                    <p id="bannerWrong" class="text-center mt-10 text-wrong-col"></p>
                 </div>
                 <form id="login" class="text-center p-6">
                     <div class="text-center p-6">
@@ -45,7 +45,7 @@
                     <div class="text-center p-6">
                         <input type="password" id="password-login" placeholder="Password" class="border rounded-lg py-1 px-7 border-slate-800 mr-2">
                     </div>
-                    <input type="submit" value="Login" id="loginBtn" class="mt-10 bg-header-col py-1 px-4 rounded-lg">
+                    <input type="submit" id="knappen" class="mt-10 bg-header-col py-1 px-4 rounded-lg">
                 </form>
                 <p class="text-center">Not a member yet? <a href="./registrer.html" class="hover:underline text-auction-col">Register here</a></p>
             </div>

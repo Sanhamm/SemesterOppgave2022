@@ -9,7 +9,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Kavivanar&display=swap" rel="stylesheet"> 
         <script src="./src/header.js" defer></script>
-        <script src="./src/register.js"></script>
+        <script src="./src/register.js" defer></script>
         <title>BiD Homepage</title>
     </head>
     <body class="bg-background-col">
@@ -39,19 +39,22 @@
                 </div>
                 <form id="login" class="text-center p-6">
                     <div class="text-center p-6">
+                        <p id="usernameMsg" class="text-wrong-col"></p>
                         <input type="name" id="username-register" placeholder="Username" class="border rounded-lg py-1 px-7 border-slate-800 mr-2">
                     </div>
                     <div class="text-center p-6">
                         <input type="url" id="url-register" placeholder="Avatar" class="border rounded-lg py-1 px-7 border-slate-800 mr-2">
                     </div>
                     <div class="text-center p-6">
+                        <p id="mailMsg" class="text-wrong-col"></p>
                         <input type="e-mail" id="e-mail-register" placeholder="E-mail" class="border rounded-lg py-1 px-7 border-slate-800 mr-2">
                     </div>
                     <div class="text-center p-6">
+                        <p id="passwordMsg" class="text-wrong-col"></p>
                         <input type="password" id="password-register" placeholder="Password" class="border rounded-lg py-1 px-7 border-slate-800 mr-2">
                     </div>
 
-                    <input type="submit" value="Login" id="registerBtn" class="mt-10 bg-header-col py-1 px-4 rounded-lg">
+                    <input type="submit" value="Register" id="registerBtn" class="mt-10 bg-header-col py-1 px-4 rounded-lg">
                 </form>
                 <p class="text-center">Are u a member? <a href="./login.html" class="hover:underline text-auction-col">Login here</a></p>
             </div>

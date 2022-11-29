@@ -1,5 +1,7 @@
 # SemesterOppgave2022
 
+testbruker: test2189@stud.noroff.no
+
 ## Trello
 
 - https://trello.com/b/B24Q0uLe/semesteroppgave2022

@@ -10,6 +10,7 @@ module.exports = {
       "auction-col": "#FF8C8C",
       "bidding-col": "#08DD2A",
       "background-col": "#F5F5F5",
+      "wrong-col": "#FF0000",
     },
     fontFamily: {
       "header-font": ["karivanar", '"Josefin Sans"', "Verdana"],

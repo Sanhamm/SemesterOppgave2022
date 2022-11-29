@@ -1,10 +1,10 @@
 const API_BASE_URL = "https://api.noroff.dev/api/v1";
-const loginURL = "/api/v1/social/auth/login";
+const loginURL = "/auction/auth/login";
 
 const usernameInput = document.getElementById("e-mail-login");
 const passwordInput = document.getElementById("password-login");
-const loginBtn = document.getElementById("loginBtn");
 const wrongMsg = document.getElementById("bannerWrong");
+const loginBtn = document.getElementById("knappen");
 
 async function loginUser(url, userData) {
   try {
@@ -16,15 +16,17 @@ async function loginUser(url, userData) {
       body: JSON.stringify(userData),
     };
     const response = await fetch(url, postData);
+    console.log(response);
     const json = await response.json();
+    console.log(json);
     if (response.status == 200) {
       const accessToken = json.accessToken;
       localStorage.setItem("accessToken", accessToken);
-      const username = usernameInput.value.trim();
-      localStorage.setItem("username", username);
+      localStorage.setItem("credits", json.credits);
+      localStorage.setItem("username", json.name);
       window.location = "index.html";
     } else {
-      wrongMsg.innerHTML = json.message;
+      wrongMsg.innerHTML = "Email and password dont checkout";
     }
   } catch (error) {
     console.log(error);

@@ -16,8 +16,6 @@ async function getWhitToken(url) {
     const response = await fetch(url, fetchData);
     const json = await response.json();
     listPosts(json);
-    //console.log(listPosts);
-    console.log(token);
   } catch (error) {
     console.log(error);
   }
@@ -26,21 +24,31 @@ async function getWhitToken(url) {
 let headerToken = localStorage.getItem("accessToken");
 let UrlImg = localStorage.getItem("accessUrlImg");
 let userName = localStorage.getItem("username");
+let credits = localStorage.getItem("credits");
+
 if (headerToken != null) {
   document.getElementById("navbar-default").innerHTML = `
-                    <ul class=" items-center md:flex md:space-x-32 mr-46 text-2xl font-header-font ">
-                        <li><a href="./index.html" class="hover:underline">Home</a></li>
-                        <li><a href="./profile.html" class="hover:underline">Profile</a></li>
-                    </ul>
+                <ul class=" items-center md:flex md:space-x-32 mr-46 text-2xl font-header-font ">
+                    <li><a href="./index.html" class="hover:underline">Home</a></li>
+                    <li><a href="./profile.html" class="hover:underline">Profile</a></li>
+                    <li><a href="./index.html" id="logoutBtn" class="hover:underline">Log Out</a></li>
+                </ul>
     `;
+  document.getElementById(
+    "hamburgerMenu"
+  ).innerHTML = `<p>Credits: <b>${credits}</b></p>`;
   document.getElementById("frontsite-profile").innerHTML = `
             <div id="frontsite-img" class="w-1/2 ">
                 <img src="${UrlImg}" alt="Avatar for user" class="mx-auto">
             </div>
             <div id="frontsite-username" class="w-1/2 grid-cols-1 content-between">
-                <h1>Hello,<br> ${userName}</h1>
+                <h1>Hello,<br> <b class="text-xl">${userName}<b></h1>
             </div>
     `;
+  document.getElementById("postBtn").innerHTML = `
+<button id="login-btn" class="mt-16 bg-header-col py-1 px-4 rounded-lg"><a href="./post.html">Post Auction</a></button>
+
+`;
 }
 
 const postsUrl = `${API_BASE_URL}${AllListings}`;
@@ -49,7 +57,22 @@ getWhitToken(postsUrl);
 const listPosts = (posts) => {
   outPost.innerHTML = "";
   for (let inn of posts) {
-    console.log(inn);
+    const date = new Date(inn.endsAt).getTime();
+    const now = new Date().getTime();
+    const distance = date - now;
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const min = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+    let timeLeft = "";
+
+    if (distance > 0) {
+      timeLeft = `${days}d ${hours}h ${min}m`;
+    } else {
+      timeLeft = "EXPIRED";
+    }
     let newDiv = `    
         <div class="grid grid-cols-2 shadow-inner rounded-lg m-2 ">
             <div class="object-center ">       
@@ -60,9 +83,20 @@ const listPosts = (posts) => {
                 <p class="text-sm">${inn.description}</p>
                 <a href="" class="font-italic text-xs"><em>${inn.seller.name}</em></a><br>
                 <button class="mt-16 bg-header-col w-24 h-8 rounded-lg shadow-xl">Bid</button>
+                <p>Bids: ${inn.bids.length}</p>
+                <p>${timeLeft}</p>
             </div>
+
         </div>
         `;
     outPost.innerHTML += newDiv;
   }
 };
+
+const logoutBtn = document.getElementById("logoutBtn");
+
+function logoutFunction() {
+  localStorage.clear();
+}
+
+logoutBtn.addEventListener("click", logoutFunction);
