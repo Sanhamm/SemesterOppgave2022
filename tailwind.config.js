@@ -9,6 +9,7 @@ module.exports = {
       "header-col": "#FFDF8C",
       "auction-col": "#FF8C8C",
       "bidding-col": "#08DD2A",
+      "background-col": "#F5F5F5",
     },
     fontFamily: {
       "header-font": ["karivanar", '"Josefin Sans"', "Verdana"],
