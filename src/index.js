@@ -1,6 +1,6 @@
 const API_BASE_URL = "https://api.noroff.dev";
 const AllListings =
-  "/api/v1/auction/listings?_seller=true&_bids=true&sort=endsAt&sortOrder=desc";
+  "/api/v1/auction/listings?_seller=true&_bids=true&sort=created&sortOrder=desc";
 const outPost = document.getElementById("outputPosts");
 
 async function getWhitToken(url) {
@@ -15,16 +15,15 @@ async function getWhitToken(url) {
     };
     const response = await fetch(url, fetchData);
     const json = await response.json();
-    for (let i = 0; i < json.length; i++) {
-      console.log(json[i]);
 
+    /* For removing the auctions that have expired */
+
+    for (let i = 0; i < json.length; i++) {
       if (new Date().toJSON() > json[i].endsAt) {
-        console.log(json[i] + "fdijfdjifdji");
         json.splice(i, 1);
         i--;
       }
     }
-    console.log(json);
     listPosts(json);
   } catch (error) {
     console.log(error);
@@ -35,10 +34,12 @@ let headerToken = localStorage.getItem("accessToken");
 let UrlImg = localStorage.getItem("accessUrlImg");
 let userName = localStorage.getItem("username");
 
+/* Changing Top of site to show avatar for user and name */
+
 if (headerToken != null) {
   document.getElementById("frontsite-profile").innerHTML = `
             <div id="frontsite-img" class="w-1/2 ">
-                <img src="${UrlImg}" alt="Avatar for user" class="mx-auto">
+                <img src="${UrlImg}" alt="Avatar for user" class="mx-auto text-center">
             </div>
             <div id="frontsite-username" class="w-1/2 grid-cols-1 content-between">
                 <h1>Hello,<br> <b class="text-xl">${userName}<b></h1>
@@ -55,7 +56,7 @@ getWhitToken(postsUrl);
 const listPosts = (posts) => {
   outPost.innerHTML = "";
   for (let inn of posts) {
-    //console.log(inn);
+    /* To show the exact time thats left of the auctions */
     const date = new Date(inn.endsAt).getTime();
     const now = new Date().getTime();
     const distance = date - now;
@@ -73,7 +74,7 @@ const listPosts = (posts) => {
       timeLeft = "EXPIRED";
     }
     let newDiv = `    
-        <div class=" grid grid-cols-2 shadow-inner rounded-lg m-2 ">
+        <div class=" grid grid-cols-2 shadow-inner rounded-lg m-2 bg-card-col">
             <div class="object-fill">       
                 <img class = "shadow-inner rounded lg object-cover w-100 h-72 " src="${inn.media}">
             </div>

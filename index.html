@@ -31,25 +31,30 @@
             </div>
         </nav>    
     </header>
-    <main>
-        <div id="frontsite-profile" class="flex flex-wrap items-center w-full mx-auto justify-between mt-16 max-w-screen-xl">
+    <main class="">
+        <div id="frontsite-profile" class="flex flex-wrap items-center w-full mx-auto justify-between mt-16 max-w-screen-xl max-w-7xl">
             <div id="frontsite-img" class="w-1/2 ">
-                <img src="./media/BiD.png" alt="Logo for website" class="mx-auto">
+                <img src="./media/BiD.png" alt="Logo for website" class="mx-auto text-center">
             </div>
-            <div id="frontsite-username" class="w-1/2 grid-cols-1 content-between">
+            <div id="frontsite-username" class="w-1/2 grid-cols-1 content-between mx-auto">
                 <h1>Hello,<br> You want to login?</h1>
             </div>
         </div>
-       <div class="flex">
-        <div id="searchBar" class="mt-16 max-w-screen-xl w-1/2 pl-10 content-end">
-            <input type="text" placeholder="Search.." class="border rounded-lg py-1 px-2 border-slate-800 mr-2 ">
-            <button id="search-btn "class="bg-auction-col py-1 px-4 rounded-lg">Search</button>
+       <div class="flex p-4 max-w-7xl mx-auto">
+            <div id="searchBar" class="mt-16 max-w-screen-xl w-1/2 pl-10 content-end mx-auto">
+                <input type="text" placeholder="Search.." class="border rounded-lg py-1 px-2 border-slate-800 mr-2 ">
+                <button id="search-btn "class="bg-auction-col py-1 px-4 rounded-lg mx-auto">Search</button>
+            </div>
+            <div id="postBtn" class="w-1/2 max-w-7xl mx-auto">
+                <button id="login-btn" class="mt-16 bg-header-col py-1 px-4 rounded-lg"><a href="./Login.html">Login</a></button>
+            </div>
         </div>
-        <div id="postBtn" class="w-1/2">
-            <button id="login-btn" class="mt-16 bg-header-col py-1 px-4 rounded-lg"><a href="./Login.html">Login</a></button>
+        <div class="bg-div-col p-5 mt-10 border-y-1 mb-10 ">
+            <h2 class="text-center text-3xl">Auctions</h2>
         </div>
+        <div id="outputPosts" class="grid grid-cols-1 lg:grid-cols-2 p-4 max-w-7xl mx-auto">
+    
         </div>
-                <div id="outputPosts" class="grid grid-cols-1 lg:grid-cols-2 p-4"></div>
         </main>
     <footer id="footer-id" class="h-20 bg-header-col ">
     </footer>
