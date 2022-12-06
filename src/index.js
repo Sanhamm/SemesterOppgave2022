@@ -1,6 +1,6 @@
 const API_BASE_URL = "https://api.noroff.dev";
 const AllListings =
-  "/api/v1/auction/listings?_seller=true&_bids=true&sort=created&sortOrder=desc";
+  "/api/v1/auction/listings?_seller=true&_bids=true&_active=true&sort=endsAt&sortOrder=asc";
 const outPost = document.getElementById("outputPosts");
 
 async function getWhitToken(url) {
@@ -15,7 +15,7 @@ async function getWhitToken(url) {
     };
     const response = await fetch(url, fetchData);
     const json = await response.json();
-
+    filterList = json;
     /* For removing the auctions that have expired */
 
     for (let i = 0; i < json.length; i++) {
@@ -91,3 +91,25 @@ const listPosts = (posts) => {
     outPost.innerHTML += newDiv;
   }
 };
+
+const search = document.getElementById("searchFilter");
+search.addEventListener("keyup", filterFunction);
+
+function filterFunction() {
+  const filterQuery = search.value.toLowerCase();
+
+  const filtering = filterList.filter((json) => {
+    const user = json.seller.name;
+    const title = json.title;
+    let body = json.description;
+    if (body === null) {
+      body = "";
+    }
+
+    if (user.indexOf(filterQuery) > -1) return true;
+    if (title.indexOf(filterQuery) > -1) return true;
+    if (body.indexOf(filterQuery) > -1) return true;
+    return false;
+  });
+  listPosts(filtering);
+}

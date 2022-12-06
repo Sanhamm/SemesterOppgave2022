@@ -17,17 +17,17 @@
         <nav class="navbar navbar-expand-lg py-2 relative flex flex-wrap items-center w-full justify-between max-w-screen-xl mx-auto">
             <div id="header-id" class="flex flex-wrap items-center w-full justify-between items-center">
                 <img src="./media/BiD.png" alt="Logo for website" class="mr-36">
-                <button data-collapse-toggle="navbar-default" type="button" class="mobile-menu-button inline-flex items-center p-2 ml-3 text-sm rounded-lg md:hidden" aria-controls="navbar-default" aria-expanded="false">
+                <button data-collapse-toggle="navbar-default" type="button" class="mobile-menu-button inline-flex items-center p-2 ml-3 text-sm rounded-lg lg:hidden" aria-controls="navbar-default" aria-expanded="false">
                     <span class="sr-only"> Open main menu</span>
                     <svg class="w-10 h-10" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                 </button>
-                <div class="hidden w-full md:block md:w-auto mobile-menu" id="navbar-default">
-                    <ul class=" items-center md:flex md:space-x-32 mr-46 text-2xl font-header-font ">
+                <div class="hidden w-full lg:block lg:w-auto mobile-menu" id="navbar-default">
+                    <ul class=" items-center md:flex lg:space-x-32 mr-46 text-2xl font-header-font ">
                         <li><a href="./index.html" class="hover:underline">Home</a></li>
                         <li><a href="./Login.html" class="hover:underline">Login</a></li>
                     </ul>
                 </div>
-                <p id="hamburgerMenu" class="mr-4 hidden w-full md:block md:w-auto">Credits:</p>
+                <p id="hamburgerMenu" class="hidden mr-4 w-full lg:block lg:w-auto mobile-menu">Credits:</p>
             </div>
         </nav>    
     </header>
@@ -42,7 +42,7 @@
         </div>
        <div class="flex p-4 max-w-7xl mx-auto">
             <div id="searchBar" class="mt-16 max-w-screen-xl w-1/2 pl-10 content-end mx-auto">
-                <input type="text" placeholder="Search.." class="border rounded-lg py-1 px-2 border-slate-800 mr-2 ">
+                <input type="text" id="searchFilter" placeholder="Search.." class="border rounded-lg py-1 px-2 border-slate-800 mr-2 ">
                 <button id="search-btn "class="bg-auction-col py-1 px-4 rounded-lg mx-auto">Search</button>
             </div>
             <div id="postBtn" class="w-1/2 max-w-7xl mx-auto">

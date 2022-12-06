@@ -19,14 +19,12 @@
   },
   "homepage": "https://github.com/Sanhamm/SemesterOppgave2022#readme",
   "devDependencies": {
-    "eslint": "^8.28.0",
     "husky": "^8.0.2",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "tailwindcss": "^3.2.4"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix",
     "*.{js,md}": "prettier --write"
   }
 }

@@ -8,7 +8,7 @@ const myProfileUrl = `/api/v1/auction/profiles/${myProfile}`;
 const otherProfileUrl = `/api/v1/auction/profiles/${userName}`;
 const myProfileSiteUrl = `${API_BASE_URL}${myProfileUrl}`;
 const otherProfileSiteUrl = `${API_BASE_URL}${otherProfileUrl}`;
-const profileAuctions = `${API_BASE_URL}/api/v1/auction/profiles/${userName}/listings?_seller=true&_bids=true&sort=created&sortOrder=desc`;
+const profileAuctions = `${API_BASE_URL}/api/v1/auction/profiles/${userName}/listings?_seller=true&_bids=true&sort=created&sortOrder=asc`;
 console.log(myProfileSiteUrl);
 
 async function getWhitToken(url) {
