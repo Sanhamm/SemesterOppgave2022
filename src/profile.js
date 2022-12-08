@@ -42,14 +42,19 @@ const user = document.getElementById("profile-top");
 
 const getProfile = (info) => {
   user.innerHTML = "";
+  const editAvatar = `<button id="changeAvatar" class=" mt-10 bg-header-col py-1 px-4 rounded-lg mx-auto content-center" data-edit="${info.name}"><a href="./edit-avatar.html?id=${info.name}">Edit Avatar</a></button>`;
 
   let profileDiv = `
     <div id="profile-img" class="w-1/2 mx-auto">
-        <img src="${info.avatar}" alt="Avatar for user" class="mx-auto text-center">
+        <img src="${
+          info.avatar
+        }" alt="Avatar for user" class="rounded-full h-48 w-48 mx-auto object-cover">
     </div>
     <div id="profile-name" class="w-1/2 mx-auto">
         <h1 class="text-lg">${info.name}</h1>
     </div>
+    <div class="w-1/2 mx-auto">
+     ${localStorage.getItem("username") === info.name ? editAvatar : ""}</div>
     `;
   user.innerHTML = profileDiv;
 };
@@ -118,7 +123,7 @@ const getAuction = (posts) => {
                   <button class="mt-16 bg-header-col w-24 h-8 rounded-lg shadow-xl">Bid</button>
                   <p>Bids: ${inn.bids.length}</p>
                   <p>${timeLeft}</p>
-              </div>
+              </div> 
           </div>
           `;
     auctionPro.innerHTML += newDiv;

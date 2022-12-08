@@ -31,7 +31,7 @@ async function getWhitToken(url) {
 }
 
 let headerToken = localStorage.getItem("accessToken");
-let UrlImg = localStorage.getItem("accessUrlImg");
+let UrlImg = localStorage.getItem("urlImg");
 let userName = localStorage.getItem("username");
 
 /* Changing Top of site to show avatar for user and name */
@@ -39,7 +39,7 @@ let userName = localStorage.getItem("username");
 if (headerToken != null) {
   document.getElementById("frontsite-profile").innerHTML = `
             <div id="frontsite-img" class="w-1/2 ">
-                <img src="${UrlImg}" alt="Avatar for user" class="mx-auto text-center">
+                <img src="${UrlImg}" alt="Avatar for user" class="rounded-full h-48 w-48 mx-auto object-cover">
             </div>
             <div id="frontsite-username" class="w-1/2 grid-cols-1 content-between">
                 <h1>Hello,<br> <b class="text-xl">${userName}<b></h1>
@@ -73,16 +73,38 @@ const listPosts = (posts) => {
     } else {
       timeLeft = "EXPIRED";
     }
+
+    //Delete button works only if its yours and if someone have not yet bid
+    const deleteBtn = `<button id="deleteBtn" class=" bg-wrong-col text-center h-6 w-20 cursor-pointer rounded-md hover:underline" data-delete="${inn.name}">Delete</button>`;
+
+    console.log(inn.seller.name);
+
     let newDiv = `    
         <div class=" grid grid-cols-2 shadow-inner rounded-lg m-2 bg-card-col">
             <div class="object-fill">       
-                <img class = "shadow-inner rounded lg object-cover w-100 h-72 " src="${inn.media}">
+                <img class = "shadow-inner rounded lg object-cover w-100 h-72 " src="${
+                  inn.media
+                }">
             </div>
             <div class="p-2 grid gid-cols-2 ml-4">
-                <h2 class="text-base font-bold"><a href="./auction.html?id=${inn.id}">${inn.title}</a></h2>
+                <h2 class="text-base font-bold"><a href="./auction.html?id=${
+                  inn.id
+                }">${inn.title}</a></h2>
                 <p class="text-sm">${inn.description}</p>
-                <a href="./profile.html?id=${inn.seller.name}" class="font-italic text-xs"><em>${inn.seller.name}</em></a><br>
-                <button class="mt-16 bg-header-col w-24 h-8 rounded-lg shadow-xl">Bid</button>
+                <a href="./profile.html?id=${
+                  inn.seller.name
+                }" class="font-italic text-xs"><em>${
+      inn.seller.name
+    }</em></a><br>
+                <a class=" bg-header-col text-center h-6 w-20 cursor-pointer rounded-md hover:underline" href="auction.html?id=${
+                  inn.id
+                }">Bid</a>
+                ${
+                  localStorage.getItem("username") === inn.seller.name &&
+                  inn.bids.length === 0
+                    ? deleteBtn
+                    : ""
+                }
                 <p>Bids: ${inn.bids.length}</p>
                 <p>${timeLeft}</p>
             </div>
