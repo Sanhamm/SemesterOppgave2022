@@ -25,7 +25,7 @@ async function loginUser(url, userData) {
       localStorage.setItem("credits", json.credits);
       localStorage.setItem("username", json.name);
       localStorage.setItem("urlImg", json.avatar);
-      window.location = "index.html";
+      window.history.back();
     } else {
       wrongMsg.innerHTML = "Email and password dont checkout";
     }

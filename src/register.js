@@ -21,7 +21,7 @@ async function registerNewUser(url, data) {
     const answer = await response.json();
     console.log(answer);
     if (response.ok == true) {
-      //window.location = "../login.html"
+      window.location = "./login.html";
     }
     if (answer.statusCode == 400) {
       usernameMsg.innerHTML = "Something went wrong, try again";
