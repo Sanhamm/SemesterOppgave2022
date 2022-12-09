@@ -1,4 +1,3 @@
-//so that we get the right ID from the ayction
 const queryString = document.location.search;
 
 const params = new URLSearchParams(queryString);
@@ -6,7 +5,7 @@ const id = params.get("id");
 
 //the url that i use
 const API_BASE_URL = "https://api.noroff.dev";
-const deleteUrl = `/api/v1/auction/listings/${id}`;
+const deleteUrl = `/api/v1/auction/listings/`;
 const listBidUrl = `/api/v1/auction/listings/${id}?_seller=true&_bids=true`;
 const listingBiddingUrl = `${API_BASE_URL}${listBidUrl}`;
 const bidUrl = `${API_BASE_URL}/api/v1/auction/listings/${id}/bids`;
@@ -64,7 +63,6 @@ const ListPosts = (post) => {
   } else {
     timeLeft = "EXPIRED";
   }
-
   let newDiv = ` 
         <div class="lg:w-1/2 md:w-screen mt-5">
             <img src="${post.media}" alt="img for product " class=" w-3/4 h-3/4 mx-auto">
@@ -160,8 +158,11 @@ if (bidToken === null) {
     `;
 }
 
-async function deletePosts(id) {
-  const url = `${API_BASE_URL}${deleteUrl}`;
+console.log(id);
+
+async function deletePosts(id2) {
+  const url = `${API_BASE_URL}${deleteUrl}${id2}`;
+  console.log(id2);
   console.log(url);
   try {
     const token = localStorage.getItem("accessToken");
@@ -173,9 +174,7 @@ async function deletePosts(id) {
       },
     };
     const response = await fetch(url, deleteData);
-    const json = await response.json();
-    console.log(json);
-    if (response.status === 200) window.location = "../index.html";
+    if (response.status === 204) window.location = "../index.html";
   } catch (error) {
     console.log(error);
   }

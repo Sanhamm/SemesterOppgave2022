@@ -42,7 +42,6 @@ async function getWhitToken2(url) {
     const response = await fetch(url, fetchData);
     const json = await response.json();
     filterList = json;
-    console.log(json.credits);
     if (headerToken2 != null) {
       document.getElementById(
         "hamburgerMenu"

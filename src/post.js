@@ -16,10 +16,8 @@ async function submittPost(url, userToPost) {
       body: JSON.stringify(userToPost),
     };
     const response = await fetch(url, postData);
-    console.log(response);
     const json = await response.json();
-    console.log(json);
-    document.location.reload();
+    if (response.status === 201) window.location = "../index.html";
   } catch (error) {
     console.log(error);
   }
@@ -42,7 +40,6 @@ function postFunction(event) {
     endsAt: dateEnd,
   };
   submittPost(postsUrl, userToPost);
-  console.log(userToPost);
 }
 
 btnPost.addEventListener("click", postFunction);

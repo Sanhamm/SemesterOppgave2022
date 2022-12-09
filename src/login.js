@@ -16,9 +16,7 @@ async function loginUser(url, userData) {
       body: JSON.stringify(userData),
     };
     const response = await fetch(url, postData);
-    console.log(response);
     const json = await response.json();
-    console.log(json);
     if (response.status == 200) {
       const accessToken = json.accessToken;
       localStorage.setItem("accessToken", accessToken);

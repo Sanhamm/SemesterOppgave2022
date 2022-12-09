@@ -1,6 +1,8 @@
 const API_BASE_URL = "https://api.noroff.dev";
 const AllListings =
   "/api/v1/auction/listings?_seller=true&_bids=true&_active=true&sort=endsAt&sortOrder=asc";
+const deleteUrl = `/api/v1/auction/listings/`;
+
 const outPost = document.getElementById("outputPosts");
 
 async function getWhitToken(url) {
@@ -75,9 +77,7 @@ const listPosts = (posts) => {
     }
 
     //Delete button works only if its yours and if someone have not yet bid
-    const deleteBtn = `<button id="deleteBtn" class=" bg-wrong-col text-center h-6 w-20 cursor-pointer rounded-md hover:underline" data-delete="${inn.name}">Delete</button>`;
-
-    console.log(inn.seller.name);
+    const deleteBtn = `<button id="deleteBtn" class=" bg-wrong-col text-center h-6 w-20 cursor-pointer rounded-md hover:underline"><a href="auction.html?id=${inn.id}">Delete</a></button>`;
 
     let newDiv = `    
         <div class=" grid grid-cols-2 shadow-inner rounded-lg m-2 bg-card-col">
@@ -112,6 +112,7 @@ const listPosts = (posts) => {
         `;
     outPost.innerHTML += newDiv;
   }
+  const buttonDelete = document.querySelectorAll("button#deleteBtn");
 };
 
 const search = document.getElementById("searchFilter");
