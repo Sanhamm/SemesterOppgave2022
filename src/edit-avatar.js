@@ -10,7 +10,7 @@ const editFullUrl = `${API_BASE_URL}${editAvatarUrl}`;
 
 console.log(editAvatarUrl);
 
-const outEdit = document.getElementById("avatar-edit");
+const outEdit = document.getElementById("div-edit");
 
 async function getWhitToken(url) {
   try {
@@ -24,9 +24,10 @@ async function getWhitToken(url) {
     };
     const response = await fetch(url, fetchData);
     const json = await response.json();
+
     ListPosts(json);
   } catch (error) {
-    console.log(error);
+    console.warn(error);
   }
 }
 
@@ -35,7 +36,7 @@ const ListPosts = (post) => {
   console.log(post.avatar);
   let newDiv = ` 
         <img src="${post.avatar}" alt="Logo for website" class=" rounded-full h-48 w-48 mx-auto object-cover">
-        <input type="url" value="${post.avatar}" id="avatar-edit" class="border rounded-lg py-1 px-7 border-slate-800 mr-2 mt-10">
+        <input type="url" value="Your new avatarUrl" id="avatar-edit" class="border rounded-lg py-1 px-7 border-slate-800 mr-2 mt-10">
         `;
   outEdit.innerHTML += newDiv;
 };
@@ -46,6 +47,7 @@ async function editInput(url) {
   const userToEdit = {
     avatar: aviEdit,
   };
+  console.log(userToEdit);
   try {
     const token = localStorage.getItem("accessToken");
     const editData = {
@@ -58,10 +60,11 @@ async function editInput(url) {
     };
     const response = await fetch(url, editData);
     const json = await response.json();
-    console.log(json);
-    //window.location = "profile.html"
+    if (response.status === 200) {
+      window.location = `../profile.html?id=${json.name}`;
+    }
   } catch (error) {
-    console.log(error);
+    console.warn(error);
   }
 }
 

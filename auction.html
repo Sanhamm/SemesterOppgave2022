@@ -33,11 +33,14 @@
     </header>
     <main>
         <div id="auction-id" class="lg:flex grid max-w-screen-xl mx-auto"></div>
-        <div id="bidDiv" class="mx-auto lg:pl-20 pl-10">
-            <input type="number" id="bid-input" placeholder="Your bid" class="border rounded-lg py-1 px-3 border-slate-800 mr-2">
-            <button id="bidder" class="bidder mt-10 bg-header-col py-1 px-4 rounded-lg">Bid</button>
+        <div id="bidDiv" class="grid grid-cols-1 lg:grid-cols-2 mx-auto lg:pl-20 pl-10">
+            <div class="" id="bids">
+            </div>
+            <div id="urAuction" class=" mb-60">            
+                <input type="number" id="bid-input" placeholder="Your bid" class="border rounded-lg py-1 px-3 border-slate-800 mr-2">
+                <button id="bidder" class="bidder mt-10 bg-header-col py-1 px-4 rounded-lg">Bid</button>
+            </div>
         </div>
-        <div id="bids"></div>
 
         
     <footer></footer>

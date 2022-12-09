@@ -12,7 +12,7 @@ const bidUrl = `${API_BASE_URL}/api/v1/auction/listings/${id}/bids`;
 
 //getting som divs/btns
 const bidBtn = document.getElementById("bidder");
-const logInToBid = document.getElementById("bidDiv");
+const logInToBid = document.getElementById("urAuction");
 
 //getting from locale storage
 const bidToken = localStorage.getItem("accessToken");
@@ -45,7 +45,7 @@ const outEdit = document.getElementById("auction-id");
 const outBids = document.getElementById("bids");
 
 const ListPosts = (post) => {
-  outEdit.innerHTML = "";
+  //outEdit.innerHTML = "";
 
   const date = new Date(post.endsAt).getTime();
   const now = new Date().getTime();
@@ -63,14 +63,15 @@ const ListPosts = (post) => {
   } else {
     timeLeft = "EXPIRED";
   }
-  let newDiv = ` 
-        <div class="lg:w-1/2 md:w-screen mt-5">
-            <img src="${post.media}" alt="img for product " class=" w-3/4 h-3/4 mx-auto">
+  let newDiv = `
+      <div class="shadow-inner rounded-lg lg:m-10 m-10 bg-card-col lg:flex grid max-w-screen-xl mx-auto mt-10 mb-5"> 
+        <div class="lg:w-1/2 md:w-screen rounded-lg">
+            <img src="${post.media}" alt="img for product " class="rounded-lg mx-auto ">
         </div>
         <div class="lg:w-1/2">
-            <h1 class="text-center text-xl text-bold">${post.title}</h1>
+            <h1 class="text-center text-xl text-bold mt-10">${post.title}</h1>
             <p class="lg:pl-20 pl-10 pr-20 mt-20 ">${post.description}</p>
-            <p class="">${timeLeft}</p>
+            <p class="lg:pl-20 pl-10 pr-20 mt-20">${timeLeft}</p>
         </div>
         `;
   outEdit.innerHTML += newDiv;
@@ -81,7 +82,7 @@ const ListPosts = (post) => {
             `;
   }
   if (post.bids.length != 0 && post.seller.name === locUsername) {
-    logInToBid.innerHTML = "";
+    logInToBid.innerHTML = "You cant bid on your own auction";
   }
 
   //always have the last bidder on top
@@ -90,10 +91,15 @@ const ListPosts = (post) => {
 
   for (let count of lastElement) {
     let newBids = `
-        <div class="">
-            <p class="">${count.bidderName}</p>
-            <p class="">${count.amount}</p>
+      <div class=" lg:grid p-5 bg-auction-col rounded-lg mr-10">   
+        <div>
+          <h2 class="text-lg">Highest bid:</h2>
         </div>
+        <div class="flex mt-3">
+            <p class="mr-10">${count.bidderName}:</p>
+            <p class="text-bold">${count.amount}</p>
+        </div>
+      </div>
     `;
     outBids.innerHTML += newBids;
     if (count.bidderName === locUsername) {
