@@ -1,6 +1,12 @@
 # SemesterOppgave2022
 
-testbruker: test2189@stud.noroff.no
+## Github
+
+-https://github.com/Sanhamm/SemesterOppgave2022
+
+## Netlify
+
+- https://deploy-preview-2--snazzy-travesseiro-5f4660.netlify.app
 
 ## Trello
 
@@ -50,3 +56,7 @@ npx mrm@2 lint-staged
 - I have only customised colors when it comes to tailwind. Reason for that is i am trying to learn taiwlind as much as possible. but i cant figure out how to get colors out from classes they have made.
 
 - I uninstalled EsLint because it gave me errors where there was none. and i could not commit with those there. so it was more of a problem than a problem solver for me.
+
+- to use it local on your machine you need to use live server. of else use the netlify link i have above in the file.
+
+- There may be a delay when u login while using netlify. i am not sure why this is happening but if u refresh u will be logged in.
