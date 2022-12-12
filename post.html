@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./public/output.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Kavivanar&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="./public/output.css">
-    <script src="./src/profile.js" defer></script>
     <script src="./src/header.js" defer></script>
-    <title>Document</title>
+    <script src="./src/post.js" defer></script>
+    <script src="https://unpkg.com/flowbite@1.5.4/dist/datepicker.js" defer></script>
+    <title>BiD Homepage</title>
 </head>
-<body>
+<body class="bg-background-col">
     <header class="bg-header-col p-2 sticky top-0">
         <nav class="navbar navbar-expand-lg py-2 relative flex flex-wrap items-center w-full justify-between max-w-screen-xl mx-auto">
             <div id="header-id" class="flex flex-wrap items-center w-full justify-between items-center">
@@ -31,14 +32,34 @@
             </div>
         </nav>    
     </header>
-    <main>
-        <div id="profile-top" class="grid grid-cols-2 items-center w-full mx-auto justify-between mt-16 max-w-screen-xl">
-            <div id="profile-img"></div>
-            <div id="profile-name"></div>
-        </div>
-        <h2 class="bg-div-col p-5 mt-10 border-y-1 mb-10 text-center text-3xl">Auctions</h2>
-        <div id="your-auctions"></div>    
-    </main>
-    <footer></footer>
+        <main>
+            <section class="p-10 mx-auto">
+                <div class="content-center">
+                    <div>
+                        <img src="./media/BiD.png" alt="logo" class="mx-auto">
+                        <h1 class="text-center mt-10 text-3xl" >Post a Auction</h1>
+                        <p id="bannerWrong-post" class="text-center mt-10 text-wrong-col"></p>
+                    </div>
+                    <form id="post" class="text-center p-6">
+                        <div class="text-center p-6">
+                            <input type="text" id="title-post" placeholder="Title" class="border rounded-lg py-1 px-7 border-slate-800 mr-2">
+                        </div>
+                        <div class="text-center p-6">
+                            <input type="text" id="img-post" placeholder="Image url" class="border rounded-lg py-1 px-7 border-slate-800 mr-2">
+                        </div>
+                        <div class="text-center p-6">
+                            <textarea id="info-post" placeholder="Information" class="border rounded-lg py-1 px-7 border-slate-800"></textarea>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <div class="relative">
+                                <input id="date-post" class="ext-center py-1 px-12 rounded-lg border" type="datetime-local" name="partydate" value=""/>
+                            </div>
+                          </div>
+                        <input type="submit" id="post-btn" value="Post" class="mt-10 bg-header-col py-1 px-20 rounded-lg">
+                    </form>
+                </div>
+            </section>
+        </main>
+    
 </body>
 </html>

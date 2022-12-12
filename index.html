@@ -5,35 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./public/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Kavivanar&display=swap" rel="stylesheet"> 
+    <script src="./src/index.js" defer></script>
+   <script src="./src/header.js" defer></script>
     <title>BiD Homepage</title>
 </head>
-<body>
-    <header>
-    <div id="header-id">
-        <img src="./media/BiD.png" alt="Logo for website">
-        <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="">Login</a></li>
-        </ul>
-    </div>
+<body class="bg-background-col">
+    <header class="bg-header-col p-2 sticky top-0">
+        <nav class="navbar navbar-expand-lg py-2 relative flex flex-wrap items-center w-full justify-between max-w-screen-xl mx-auto">
+            <div id="header-id" class="flex flex-wrap items-center w-full justify-between items-center">
+                <img src="./media/BiD.png" alt="Logo for website" class="mr-36">
+                <button data-collapse-toggle="navbar-default" type="button" class="mobile-menu-button inline-flex items-center p-2 ml-3 text-sm rounded-lg lg:hidden" aria-controls="navbar-default" aria-expanded="false">
+                    <span class="sr-only"> Open main menu</span>
+                    <svg class="w-10 h-10" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                </button>
+                <div class="hidden w-full lg:block lg:w-auto mobile-menu" id="navbar-default">
+                    <ul class=" items-center md:flex lg:space-x-32 mr-46 text-2xl font-header-font ">
+                        <li><a href="./index.html" class="hover:underline">Home</a></li>
+                        <li><a href="./Login.html" class="hover:underline">Login</a></li>
+                    </ul>
+                </div>
+                <p id="hamburgerMenu" class="hidden mr-4 w-full lg:block lg:w-auto mobile-menu">Credits:</p>
+            </div>
+        </nav>    
     </header>
-    <main>
-        <div id="frontsite-profile">
-            <div id="frontsite-img">
-                <img src="./media/BiD.png" alt="Logo for website">
+    <main class="">
+        <div id="frontsite-profile" class="lg:flex lg:flex-wrap grid grid-cols-1 items-center w-full mx-auto justify-between mt-16 max-w-screen-xl max-w-7xl">
+            <div id="frontsite-img" class=" lg:w-1/2">
+                <img src="./media/BiD.png" alt="Logo for website" class="mx-auto text-center">
             </div>
-            <div id="frontsite-username">
-                <h1>Hello, You want to login?</h1>
-                <button id="login-btn">Login</button>
+            <div id="frontsite-username" class=" grid-cols-1 content-between mx-auto">
+                <h1>Hello,<br> You want to login?</h1>
             </div>
         </div>
-        <div id="searchBar">
-            <input type="text" placeholder="Search..">
-            <button id="search-btn">Search</button>
+       <div class="lg:flex grid grid-cols-1 p-4 max-w-7xl mx-auto">
+            <div id="searchBar" class="mt-16 max-w-screen-xl lg:w-1/2 pl-10 mx-auto">
+                <input type="text" id="searchFilter" placeholder="Search.." class="border rounded-lg py-1 px-2 border-slate-800 mr-2 mx-auto ">
+            </div>
+            <div id="postBtn" class=" lg:w-1/2 max-w-7xl mx-auto">
+                <button id="login-btn" class="mt-16 bg-header-col py-1 px-4 rounded-lg "><a href="./Login.html">Login</a></button>
+            </div>
         </div>
-        <div id="outputPosts"></div>
-    </main>
-    <footer id="footer-id">
+        <div class="bg-div-col p-5 mt-10 border-y-1 mb-10 ">
+            <h2 class="text-center text-3xl">Auctions</h2>
+        </div>
+        <div id="outputPosts" class="grid grid-cols-1 lg:grid-cols-2 p-4 max-w-7xl mx-auto">
+    
+        </div>
+        </main>
+    <footer id="footer-id" class="h-20 bg-header-col ">
     </footer>
 </body>
 </html>

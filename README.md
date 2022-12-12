@@ -1,5 +1,7 @@
 # SemesterOppgave2022
 
+testbruker: test2189@stud.noroff.no
+
 ## Trello
 
 - https://trello.com/b/B24Q0uLe/semesteroppgave2022
@@ -42,3 +44,9 @@
 ```
 npx mrm@2 lint-staged
 ```
+
+- Have implemented JS for header, post, profile, register, login and search. i countered a problem that F-up my search where someone gave json.description the value of "null". i fixed with using if statement.
+
+- I have only customised colors when it comes to tailwind. Reason for that is i am trying to learn taiwlind as much as possible. but i cant figure out how to get colors out from classes they have made.
+
+- I uninstalled EsLint because it gave me errors where there was none. and i could not commit with those there. so it was more of a problem than a problem solver for me.

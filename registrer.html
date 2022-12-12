@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./public/output.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Kavivanar&display=swap" rel="stylesheet"> 
+        <script src="./src/header.js" defer></script>
+        <script src="./src/register.js" defer></script>
+        <title>BiD Homepage</title>
+    </head>
+    <body class="bg-background-col">
+        <header class="bg-header-col p-2 sticky top-0">
+            <nav class="navbar navbar-expand-lg py-2 relative flex flex-wrap items-center w-full justify-between max-w-screen-xl mx-auto">
+                <div id="header-id" class="flex flex-wrap items-center w-full justify-between items-center">
+                    <img src="./media/BiD.png" alt="Logo for website" class="mr-36">
+                    <button data-collapse-toggle="navbar-default" type="button" class="mobile-menu-button inline-flex items-center p-2 ml-3 text-sm rounded-lg lg:hidden" aria-controls="navbar-default" aria-expanded="false">
+                        <span class="sr-only"> Open main menu</span>
+                        <svg class="w-10 h-10" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                    </button>
+                    <div class="hidden w-full lg:block lg:w-auto mobile-menu" id="navbar-default">
+                        <ul class=" items-center md:flex lg:space-x-32 mr-46 text-2xl font-header-font ">
+                            <li><a href="./index.html" class="hover:underline">Home</a></li>
+                            <li><a href="./Login.html" class="hover:underline">Login</a></li>
+                        </ul>
+                    </div>
+                    <p id="hamburgerMenu" class="hidden mr-4 w-full lg:block lg:w-auto mobile-menu">Credits:</p>
+                </div>
+            </nav>    
+        </header>
+            <section class="p-10 mx-auto">
+            <div class="content-center">
+                <div>
+                    <img src="./media/BiD.png" alt="logo" class="mx-auto">
+                    <h1 class="text-center mt-10 text-3xl" >Register</h1>
+                    <p id="bannerWrong" class="mx-auto"></p>
+                </div>
+                <form id="login" class="text-center p-6">
+                    <div class="text-center p-6">
+                        <p id="usernameMsg" class="text-wrong-col"></p>
+                        <input type="text" id="username-register" placeholder="Username" class="border rounded-lg py-1 px-7 border-slate-800 mr-2">
+                    </div>
+                    <div class="text-center p-6">
+                        <input type="url" id="url-register" placeholder="Avatar" class="border rounded-lg py-1 px-7 border-slate-800 mr-2">
+                    </div>
+                    <div class="text-center p-6">
+                        <p id="mailMsg" class="text-wrong-col"></p>
+                        <input type="email" id="e-mail-register" placeholder="E-mail" class="border rounded-lg py-1 px-7 border-slate-800 mr-2">
+                    </div>
+                    <div class="text-center p-6">
+                        <p id="passwordMsg" class="text-wrong-col"></p>
+                        <input type="password" id="password-register" placeholder="Password" class="border rounded-lg py-1 px-7 border-slate-800 mr-2">
+                    </div>
+
+                    <input type="submit" value="Register" id="registerBtn" class="mt-10 bg-header-col py-1 px-4 rounded-lg cursor-pointer hover:underline">
+                </form>
+                <p class="text-center">Are u a member? <a href="./login.html" class="hover:underline text-auction-col">Login here</a></p>
+            </div>
+        </section>
+        
+</body>
+</html>
