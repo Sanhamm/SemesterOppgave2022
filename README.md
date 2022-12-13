@@ -12,6 +12,10 @@
 
 - https://trello.com/b/B24Q0uLe/semesteroppgave2022
 
+## Gant
+
+- https://github.com/Sanhamm/SemesterOppgave2022/blob/main/media/Gant-diagram-semesterOppgave2022.pdf
+
 ## Styletile
 
 - https://www.figma.com/file/FTpU8WJmNx2XF4IjswD2Yz/SemesterOppgave-stylestile?node-id=0%3A1&t=PwsIfCzzF5WlGkEh-0
