@@ -41,9 +41,9 @@ let userName = localStorage.getItem("username");
 if (headerToken != null) {
   document.getElementById("frontsite-profile").innerHTML = `
             <div id="frontsite-img" class=" lg:w-1/2 ">
-                <img src="${UrlImg}" alt="Avatar for user" class="rounded-full h-48 w-48 mx-auto object-cover">
+                <img src="${UrlImg}" alt="Avatar for user" class=" mx-auto rounded-full h-48 w-48 object-cover">
             </div>
-            <div id="frontsite-username" class="text-center mt-2 grid-cols-1 content-between">
+            <div id="frontsite-username" class="mt-2 grid-cols-1 content-between">
                 <h1>Hello,<br> <b class="text-xl">${userName}<b></h1>
             </div>
         `;

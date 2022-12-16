@@ -50,10 +50,10 @@ const getProfile = (info) => {
           info.avatar
         }" alt="Avatar for user" class="rounded-full h-48 w-48 mx-auto object-cover">
     </div>
-    <div id="profile-name" class="w-1/2 mx-auto">
+    <div id="profile-name" class="w-1/2 mx-auto text-center pt-10">
         <h1 class="text-lg">${info.name}</h1>
     </div>
-    <div class="w-1/2 mx-auto">
+    <div class="w-1/2 mx-auto text-center">
      ${localStorage.getItem("username") === info.name ? editAvatar : ""}</div>
     `;
   user.innerHTML = profileDiv;
