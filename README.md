@@ -6,7 +6,7 @@
 
 ## Netlify
 
-- https://deploy-preview-2--snazzy-travesseiro-5f4660.netlify.app
+- https://tourmaline-cupcake-297a95.netlify.app/
 
 ## Trello
 
