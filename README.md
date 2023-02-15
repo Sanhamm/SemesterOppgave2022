@@ -28,39 +28,9 @@
 
 - https://www.figma.com/proto/GEXsPKAvAyV2sbW1PJ1knO/Prototype-SemesterOppgave2022?node-id=1%3A382&starting-point-node-id=1%3A382
 
-## Process
+## Summary
 
-- Started whit making a repo, loaded it on VScode and started to initilise npm
-
-```
-- npm init
-```
-
-- After that i installed prettier and eslint to make my code more clean.
-
-```
-- npm install prettier --save-dev
-- npm i -D eslint
-```
-
-- After that i initalised eslint
-
-```
-- npx eslint --init
-```
-
-- I made an hook so it runs everytime i commit, so the code is always clean.
-
-```
-npx mrm@2 lint-staged
-```
-
-- Have implemented JS for header, post, profile, register, login and search. i countered a problem that F-up my search where someone gave json.description the value of "null". i fixed with using if statement.
-
-- I have only customised colors when it comes to tailwind. Reason for that is i am trying to learn taiwlind as much as possible. but i cant figure out how to get colors out from classes they have made.
-
-- I uninstalled EsLint because it gave me errors where there was none. and i could not commit with those there. so it was more of a problem than a problem solver for me.
-
-- to use it local on your machine you need to use live server. of else use the netlify link i have above in the file.
-
-- There may be a delay when u login while using netlify. i am not sure why this is happening but if u refresh u will be logged in.
+On this project we where supposed to make noroff own kind of Finn.no or ebay if you might.  
+I used HTML, CSS framework tailwind and Javascript for this task.  
+This is the first time i tried Tailwind just for fun really, i have been using  
+bootstrap for some of the other projects we had and i wanted to explore my options on this front.
