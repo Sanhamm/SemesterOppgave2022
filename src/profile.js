@@ -113,7 +113,7 @@ const getAuction = (posts) => {
       timeLeft = "EXPIRED";
     }
     let newDiv = `    
-          <div class=" grid grid-cols-2 shadow-inner rounded-lg m-2 bg-card-col">
+          <div class=" grid grid-cols-2 shadow-inner rounded-lg m-2 bg-background-col">
               <div class="object-fill">       
                   <img class = "shadow-inner rounded lg object-cover w-100 h-72 " src="${inn.media}">
               </div>

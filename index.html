@@ -12,7 +12,7 @@
    <script src="./src/header.js" defer></script>
     <title>BiD Homepage</title>
 </head>
-<body class="bg-background-col">
+<body class="bg-div-col flex flex-col min-h-screen">
     <header class="bg-header-col p-2 sticky top-0">
         <nav class="navbar navbar-expand-lg py-2 relative flex flex-wrap items-center w-full justify-between max-w-screen-xl mx-auto">
             <div id="header-id" class="flex flex-wrap items-center w-full justify-between items-center">
@@ -42,20 +42,25 @@
         </div>
        <div class="lg:flex grid grid-cols-1 pl-4 max-w-7xl mx-auto">
             <div id="searchBar" class="mt-16 max-w-screen-xl lg:w-1/2 pl-10 mx-auto">
-                <input type="text" id="searchFilter" placeholder="Search.." class="border rounded-lg py-1 px-2 border-slate-800 mr-2 mx-auto ">
             </div>
             <div id="postBtn" class=" lg:w-1/2 max-w-7xl mx-auto content-center ">
                 <button id="login-btn" class="mt-16 bg-header-col py-1 px-4 rounded-lg "><a href="./Login.html">Login</a></button>
             </div>
         </div>
-        <div class="bg-div-col p-5 mt-10 border-y-1 mb-10 ">
+        <div class="bg-header-col p-5 mt-10 border-y-1 mb-10 ">
             <h2 class="text-center text-3xl">Auctions</h2>
         </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 p-4 max-w-7xl mx-auto">
+        <div id="searchBar" class="m-2">
+            <input type="text" id="searchFilter" placeholder="Search.." class="border rounded-lg py-1 px-2 border-slate-800 mr-2 mx-auto ">
+        </div>
+        </div>        
+
         <div id="outputPosts" class="grid grid-cols-1 lg:grid-cols-2 p-4 max-w-7xl mx-auto">
     
         </div>
         </main>
-    <footer id="footer-id" class="h-20 bg-header-col ">
-    </footer>
+        <footer id="footer-id" class="h-20 bg-header-col mt-auto ">
+        </footer>
 </body>
 </html>

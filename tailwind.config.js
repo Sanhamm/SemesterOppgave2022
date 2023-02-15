@@ -12,7 +12,7 @@ module.exports = {
       "background-col": "#F5F5F5",
       "wrong-col": "#FF0000",
       "card-col": "#F9F9F9",
-      "div-col": "#FFF1CD",
+      "div-col": "#FFF7E3",
     },
     fontFamily: {
       "header-font": ["karivanar", '"Josefin Sans"', "Verdana"],

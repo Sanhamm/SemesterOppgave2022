@@ -43,12 +43,12 @@ if (headerToken != null) {
             <div id="frontsite-img" class=" lg:w-1/2 ">
                 <img src="${UrlImg}" alt="Avatar for user" class=" mx-auto rounded-full h-48 w-48 object-cover">
             </div>
-            <div id="frontsite-username" class="mt-2 grid-cols-1 content-between">
+            <div id="frontsite-username" class="grid-cols-1 lg:m-0 mx-auto pt-10">
                 <h1>Hello,<br> <b class="text-xl">${userName}<b></h1>
             </div>
         `;
   document.getElementById("postBtn").innerHTML = `
-            <button id="login-btn" class="mt-16 bg-header-col py-1 px-4 rounded-lg"><a href="./post.html">Post Auction</a></button>
+            <button id="login-btn" class="mt-8 bg-header-col py-1 px-4 rounded-lg"><a href="./post.html">Post Auction</a></button>
 
         `;
 }
@@ -80,7 +80,7 @@ const listPosts = (posts) => {
     const deleteBtn = `<button id="deleteBtn" class=" bg-wrong-col text-center h-6 w-20 cursor-pointer rounded-md hover:underline"><a href="auction.html?id=${inn.id}">Delete</a></button>`;
 
     let newDiv = `    
-        <div class=" grid grid-cols-2 shadow-inner rounded-lg m-2 bg-card-col">
+        <div class=" grid grid-cols-2 shadow-inner rounded-lg m-2 bg-background-col">
             <div class="object-fill">       
                 <img class = "shadow-inner rounded lg object-cover w-100 h-72 " src="${
                   inn.media
