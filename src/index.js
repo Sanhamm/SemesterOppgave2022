@@ -80,35 +80,32 @@ const listPosts = (posts) => {
     const deleteBtn = `<button id="deleteBtn" class=" bg-wrong-col text-center h-6 w-20 cursor-pointer rounded-md hover:underline"><a href="auction.html?id=${inn.id}">Delete</a></button>`;
 
     let newDiv = `    
-        <div class=" grid grid-cols-2 shadow-inner rounded-lg m-2 bg-background-col">
-            <div class="object-fill">       
-                <img class = "shadow-inner rounded lg object-cover w-100 h-72 " src="${
-                  inn.media
-                }">
-            </div>
-            <div class="p-2 grid gid-cols-2 ml-4">
-                <h2 class="text-base font-bold"><a href="./auction.html?id=${
-                  inn.id
-                }">${inn.title}</a></h2>
-                <p class="text-sm">${inn.description}</p>
-                <a href="./profile.html?id=${
-                  inn.seller.name
-                }" class="font-italic text-xs"><em>${
+    <div class="grid grid-cols-1 shadow-inner rounded-lg m-6 bg-background-col">
+    <div class="object-fill">
+        <img class="shadow-inner rounded-t-lg object-cover w-full h-52" src="${
+          inn.media
+        }">
+    </div>
+    <div class="p-4 grid gid-cols-2 ml-4">
+        <h2 class="text-base font-bold"><a href="./auction.html?id=${inn.id}">${
+      inn.title
+    }</a></h2>
+      
+        ${
+          localStorage.getItem("username") === inn.seller.name &&
+          inn.bids.length === 0
+            ? deleteBtn
+            : ""
+        }
+        <p class="text-sm py-2">Bids: ${inn.bids.length}</p>
+        <p class="text-sm py-2">${timeLeft}</p>        <a href="./profile.html?id=${
       inn.seller.name
-    }</em></a><br>
-                <a class=" bg-header-col text-center h-6 w-20 cursor-pointer rounded-md hover:underline" href="auction.html?id=${
-                  inn.id
-                }">Bid</a>
-                ${
-                  localStorage.getItem("username") === inn.seller.name &&
-                  inn.bids.length === 0
-                    ? deleteBtn
-                    : ""
-                }
-                <p>Bids: ${inn.bids.length}</p>
-                <p>${timeLeft}</p>
-            </div>
-        </div>
+    }" class="font-italic text-xs pb-2"><em>@ ${inn.seller.name}</em></a><br>
+  <a class="bg-header-col text-center h-6 w-20 cursor-pointer rounded-md hover:underline" href="auction.html?id=${
+    inn.id
+  }">Bid</a>
+    </div>
+</div>
         `;
     outPost.innerHTML += newDiv;
   }
